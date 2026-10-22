@@ -1,5 +1,6 @@
 package pfc
 
+import evaluator.Evaluator.eval
 import java.io.{FileInputStream, InputStream}
 
 @main
@@ -13,3 +14,4 @@ def main(args: String*): Unit =
   val visitor = new ASTVisitor
   val abstractTree = visitor.visit(concreteTree)
   println(abstractTree)
+  println(s"==> ${eval(abstractTree)}")
