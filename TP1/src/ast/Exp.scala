@@ -6,6 +6,8 @@ enum Exp:
   case IfZ(test: Exp, exp1: Exp, exp2: Exp)
   case Var(name: String)
   case Let(name: String, value: Exp, body: Exp)
+  case Fun(param: String, body: Exp)
+  case App(function: Exp, arg: Exp)
   
 enum Op:
   case Plus, Minus, Multiply, Divide
