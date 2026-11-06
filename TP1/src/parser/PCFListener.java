@@ -1,4 +1,4 @@
-// Generated from C:/Users/A D M I N/Downloads/TP1 (2)/TP1/src/parserANTLRv2/PCF.g4 by ANTLR 4.13.2
+// Generated from C:/Users/A D M I N/compilation/TP1/src/parser/PCF.g4 by ANTLR 4.13.2
 package parser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -19,6 +19,18 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPar(PCFParser.ParContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code App}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterApp(PCFParser.AppContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code App}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitApp(PCFParser.AppContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code BOp}
 	 * labeled alternative in {@link PCFParser#term}.
@@ -79,4 +91,16 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfZ(PCFParser.IfZContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFun(PCFParser.FunContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFun(PCFParser.FunContext ctx);
 }

@@ -1,10 +1,17 @@
 package evaluator
 
-import ast.{Exp, Op}
+import ast.{Exp, Op, Value}
 import Exp.*
+import ast.Value.intVal
 
 object Evaluator :
-  def eval(exp: Exp, env: Map[String, Int] = Map()): Int = exp match
+  given int2Val: Conversion[Int, Value] = n => Value.intVal(n)
+
+  given val2Int: Conversion[Value, Int] = {
+    case Value.intVal(n) => n
+  }
+  
+  def eval(exp: Exp, env: Map[String, Int] = Map()): Value = exp match
     case Number(value) => value
     case Var(x) => env.getOrElse(x, throw new Exception(s"Unbound variable: $x"))
     case BinaryExpression(op, e1, e2) =>
@@ -15,6 +22,6 @@ object Evaluator :
         case Op.Minus => a - b
         case Op.Multiply => a * b
         case Op.Divide =>
-          if b == 0 then throw new Exception("Division by zero") else a / b
-    case IfZ(t, a, b) => if eval(t, env) == 0 then eval(a, env) else eval(b, env)
+          if b == intVal(0) then throw new Exception("Division by zero") else a / b
+    case IfZ(t, a, b) => if eval(t, env) == intVal(0) then eval(a, env) else eval(b, env)
     case Let(x, v, body) => eval(body, env + (x -> eval(v, env)))

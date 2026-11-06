@@ -29,3 +29,10 @@ class ASTVisitor extends PCFBaseVisitor[Exp]:
   override def visitLet(ctx: PCFParser.LetContext): Exp =
     val List(v, body) = ctx.term.asScala.toList.map(visit)
     Let(ctx.VAR.getText, v, body)
+
+  override def visitFun(ctx: PCFParser.FunContext): Exp =
+    Fun(ctx.VAR.getText, visit(ctx.term))
+
+  override def visitApp(ctx: PCFParser.AppContext): Exp =
+    val List(f, a) = ctx.term.asScala.toList.map(x => visit(x))
+    App(f, a)

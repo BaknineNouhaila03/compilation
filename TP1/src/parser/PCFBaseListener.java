@@ -1,4 +1,4 @@
-// Generated from C:/Users/A D M I N/Downloads/TP1 (2)/TP1/src/parserANTLRv2/PCF.g4 by ANTLR 4.13.2
+// Generated from C:/Users/A D M I N/compilation/TP1/src/parser/PCF.g4 by ANTLR 4.13.2
 package parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -24,6 +24,18 @@ public class PCFBaseListener implements PCFListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPar(PCFParser.ParContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterApp(PCFParser.AppContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitApp(PCFParser.AppContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -84,6 +96,18 @@ public class PCFBaseListener implements PCFListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfZ(PCFParser.IfZContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFun(PCFParser.FunContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFun(PCFParser.FunContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

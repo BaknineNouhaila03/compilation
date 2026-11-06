@@ -1,4 +1,4 @@
-// Generated from C:/Users/A D M I N/Downloads/TP1 (2)/TP1/src/parserANTLRv2/PCF.g4 by ANTLR 4.13.2
+// Generated from C:/Users/A D M I N/compilation/TP1/src/parser/PCF.g4 by ANTLR 4.13.2
 package parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -17,6 +17,13 @@ public interface PCFVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPar(PCFParser.ParContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code App}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitApp(PCFParser.AppContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code BOp}
 	 * labeled alternative in {@link PCFParser#term}.
@@ -52,4 +59,11 @@ public interface PCFVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIfZ(PCFParser.IfZContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFun(PCFParser.FunContext ctx);
 }

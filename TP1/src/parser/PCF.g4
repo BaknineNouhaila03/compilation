@@ -8,6 +8,8 @@ term
     | '(' term ')'                              # Par
     | NUMBER                                    # Number
     | VAR                                       # Var
+    | 'fun' VAR '->' term                       # Fun
+    | term term                                 # App
     ;
 
 NUMBER : '0' | [1-9][0-9]* ;
