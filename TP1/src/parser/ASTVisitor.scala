@@ -4,6 +4,7 @@ import parser.PCFBaseVisitor
 import parser.PCFParser
 import ast.*
 import Exp.*
+import evaluator.Value.*
 import scala.jdk.CollectionConverters.*
 
 
@@ -36,3 +37,9 @@ class ASTVisitor extends PCFBaseVisitor[Exp]:
   override def visitApp(ctx: PCFParser.AppContext): Exp =
     val List(f, a) = ctx.term.asScala.toList.map(x => visit(x))
     App(f, a)
+
+  override def visitFix(ctx: PCFParser.FixContext): Exp =
+    Fix(ctx.VAR.getText, visit(ctx.term))
+
+  override def visitProgram(ctx: PCFParser.ProgramContext): Exp =
+    visit(ctx.term)

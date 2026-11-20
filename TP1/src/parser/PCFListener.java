@@ -8,6 +8,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface PCFListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link PCFParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void enterProgram(PCFParser.ProgramContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PCFParser#program}.
+	 * @param ctx the parse tree
+	 */
+	void exitProgram(PCFParser.ProgramContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Par}
 	 * labeled alternative in {@link PCFParser#term}.
 	 * @param ctx the parse tree
@@ -43,6 +53,18 @@ public interface PCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitBOp(PCFParser.BOpContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFix(PCFParser.FixContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PCFParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFix(PCFParser.FixContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link PCFParser#term}.

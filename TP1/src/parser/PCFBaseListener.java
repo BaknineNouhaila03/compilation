@@ -17,6 +17,18 @@ public class PCFBaseListener implements PCFListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterProgram(PCFParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProgram(PCFParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPar(PCFParser.ParContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -48,6 +60,18 @@ public class PCFBaseListener implements PCFListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitBOp(PCFParser.BOpContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFix(PCFParser.FixContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFix(PCFParser.FixContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

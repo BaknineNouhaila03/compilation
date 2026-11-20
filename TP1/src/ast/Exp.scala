@@ -1,5 +1,6 @@
 package ast
 
+
 enum Exp:
   case Number(value: Int)
   case App(function: Exp, arg: Exp)
@@ -8,14 +9,12 @@ enum Exp:
   case IfZ(test: Exp, exp1: Exp, exp2: Exp)
   case Var(name: String)
   case Let(name: String, value: Exp, body: Exp)
+  case Fix(name: String, body: Exp) // nouveau
 
-  
+
 enum Op:
   case Plus, Minus, Multiply, Divide
 
-enum Value :
-  case intVal(value: Int)
-  case closure (param: String, t: Exp, env: Map[String, Value])
 
 object Op:
   def parse(op: String): Op = op match { 

@@ -1,9 +1,8 @@
 package pcf
 
 import evaluator.Evaluator.eval
-import parser.PCFParser as Parser
 import parser.AbstractParser.analyze
-
+import typer.Typer
 import java.io.{FileInputStream, InputStream}
 
 object pcf:
@@ -14,6 +13,7 @@ object pcf:
       else
         FileInputStream(args(0))
     val exp = analyze(in)
-    println(s"==> ${eval(exp)}")
+    val typ = Typer.eval(exp, Map())
+    println(s"==> ${eval(exp)}: $typ")
 
 
