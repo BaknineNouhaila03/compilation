@@ -4,8 +4,8 @@ import parser.PCFBaseVisitor
 import parser.PCFParser
 import ast.*
 import Exp.*
-import evaluator.Value.*
 import scala.jdk.CollectionConverters.*
+import evaluator.Value.*
 
 
 class ASTVisitor extends PCFBaseVisitor[Exp]:
