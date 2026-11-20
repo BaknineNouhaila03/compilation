@@ -1,15 +1,17 @@
 grammar PCF;
 
+program : term EOF ;
 term
-    : term op=('*' | '/') term                  # BOp
+    : term term                                 # App
+    | term op=('*' | '/') term                  # BOp
     | term op=('+' | '-') term                  # BOp
     | 'let' VAR '=' term 'in' term              # Let
     | 'ifz' term 'then' term 'else' term        # IfZ
+    | 'fun' VAR '->' term                       # Fun
+    | 'fix' VAR term                            # Fix
     | '(' term ')'                              # Par
     | NUMBER                                    # Number
     | VAR                                       # Var
-    | 'fun' VAR '->' term                       # Fun
-    | term term                                 # App
     ;
 
 NUMBER : '0' | [1-9][0-9]* ;

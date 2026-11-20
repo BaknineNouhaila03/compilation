@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Unify">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Unify.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
